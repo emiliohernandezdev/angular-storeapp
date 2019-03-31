@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <span>StoreApp</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span>
+      <button mat-button  (click)="Account()" *ngIf="auth.VerifySession() === true"><mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+        Mi cuenta
+      </button>
+      <button mat-button  (click)="Login()" *ngIf="auth.VerifySession() === false"><mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+        Acceder
+      </button>
+      <button mat-button (click)="Cart()" *ngIf="auth.VerifySession() === true"><mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+        Mi carrito
+      </button>
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

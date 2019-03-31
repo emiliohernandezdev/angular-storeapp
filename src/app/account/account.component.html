@@ -1,0 +1,93 @@
+
+<mat-card class="example-card">
+    <h2 style="text-align:center">Tu cuenta</h2>
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{auth.getName()}}</mat-card-title>
+      <mat-card-subtitle>{{auth.getEmail()}}</mat-card-subtitle>
+    </mat-card-header>
+    <br/>
+    <div style="text-align:center">
+        <img class="account-image" mat-card-image *ngIf="auth.getUserPhoto() !== null" src="{{auth.getUserPhoto()}}" alt="Foto de perfil">
+        <img class="account-image" mat-card-image *ngIf="auth.getUserPhoto() === null" src="https://www.uic.mx/posgrados/files/2018/05/default-user.png" alt="Photo of a Shiba Inu">
+    </div>
+
+    <br/>
+
+    <mat-card-content>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  <h4 style="text-align:center">Tu usuario</h4>
+              </mat-panel-title>
+              <mat-panel-description>
+             
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h2 style="text-align:center">Tu información</h2>
+            
+      <form class="example-form">
+
+          <h3>Nombre:</h3>
+          <p>{{name}}</p>
+
+
+          <h3>Correo electrónico:</h3>
+          <p>{{email}}</p>
+
+        <h3>Número telefónico:</h3>
+        <p *ngIf="phone !== ''">{{phone}}</p>
+        <p *ngIf="phone === '' || phone === null || phone === undefined">No hay número telefónico</p>
+
+    
+      </form>
+
+      <h3>Prestigio de usuario:</h3>
+          <div style="text-align:center" *ngIf="auth.getVerified() === true">
+              <button disabled mat-raised-button style="background-color:royalblue; color:#fff" *ngIf="auth.getVerified() === true" >
+                  <mat-icon style="background-color:royalblue; color:#fff">verified_user</mat-icon>
+                Usuario verificado</button>
+          </div>
+
+          <div style="text-align:center" *ngIf="auth.getVerified() === false">
+              <button disabled mat-raised-button style="background-color:orangered; color:#fff" *ngIf="auth.getVerified() === false" >
+                  <mat-icon style="background-color:orangered; color:#fff">cancel</mat-icon>
+                Usuario aún no verificado</button>
+          </div>
+      
+          </mat-expansion-panel>
+
+
+    </mat-card-content>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h4>Opciones</h4>
+        </mat-expansion-panel-header>
+      
+        <p>Opciones disponibles para tu cuenta:</p>
+      
+        <mat-action-row>
+            <div style="text-align:center">
+                <button mat-raised-button style="background-color:red" color="primary" (click)="Logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                  Cerrar sesión</button>
+      
+                  <br/>
+                  <br/>
+      
+                  <button mat-raised-button style="background-color:red" color="primary" (click)="DeleteAccount()">
+                      <mat-icon>delete</mat-icon>
+                    Eliminar cuenta</button>
+            </div>
+        </mat-action-row>
+
+      </mat-expansion-panel>
+
+
+
+  </mat-card>
+
+

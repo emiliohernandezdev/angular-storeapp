@@ -1,0 +1,73 @@
+<mat-tab-group>
+  <mat-tab label="Página de Inicio"> 
+
+      <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>La mejor tecnología</mat-card-title>
+            <mat-card-subtitle>Al mejor precio</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://img.elcomercio.pe/files/ec_article_multimedia_gallery/uploads/2018/01/02/5a4c1f8ccccfc.jpeg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+             Vendemos productos tecnológicos, a precio accesible, con el fin de atender 
+             como se merece al cliente. Los productos, tecnología 100% de primer mundo. <br />
+             <b>Nuestra especialidad: </b> los teléfonos, computadoras, accesorios, networking, software y etc.
+            </p>
+          </mat-card-content>
+          <mat-card-actions style="text-align:center">
+            <button mat-raised-button color="accent" (click)="ShowProducts()">Ver productos</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <hr/>
+
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image-2"></div>
+              <mat-card-title>Nuestra aplicación</mat-card-title>
+              <mat-card-subtitle>Muy útil, para las empresas</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://d6vdma9166ldh.cloudfront.net/media/images/11c2c180-cff6-40dc-bb6f-8dddcc473989.jpg" alt="Ionic & Firebase">
+            <mat-card-content>
+              <p>
+                <b>La app: </b> es muy útil para las empresas que quieren tener un nuevo aliado para gestionar la empresa,
+                las ventas, los ingresos, egresos, facturas, mercaderías,
+                para emprender e incluirse en el mundo de las ventas.
+                <br/><b>Nuestras herramientas:</b><br/>
+                <li><a href="https://ionicframework.com/docs/v3/" target="_blank">Ionic 3</a></li>
+                <li><a href="https://firebase.google.com/docs/?hl=es-419" target="_blank">Firebase</a></li>
+              </p>
+            </mat-card-content>
+            <mat-card-actions style="text-align:center">
+                <button style="background-color:green" mat-raised-button color="accent" (click)="Download()">
+                    <mat-icon>android</mat-icon>
+                  Descargar aplicación</button>
+            </mat-card-actions>
+          </mat-card>
+  </mat-tab>
+  <mat-tab label="Sobre nosotros"> 
+      <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image-3"></div>
+            <mat-card-title>¿Quiénes somos?</mat-card-title>
+            <mat-card-subtitle>Descubre sobre nosotros</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://www.kinal.org.gt/images/logo-en.png" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+              <p>Somos StoreApp, vendemos tecnología de primer mundo al mejor precio, te rodeamos de tecnología, la mejor calidad.
+                  Somos un grupo de estudiantes del Centro Educativo Técnico Laboral Kinal, de 6to Perito en Informática, interesados
+                  en introducirnos en el mundo de la programación y de las ventas.
+                </p>
+          </mat-card-content>
+          <mat-card-actions style="text-align:center">
+            <button mat-raised-button color="accent" (click)="Developers('web')">Nuestro equipo de desarrollo web</button>
+            <br/>
+            <br/>
+            <button mat-raised-button color="primary" (click)="Developers('movil')">Nuestro equipo de desarrollo móvil</button>
+          </mat-card-actions>
+        </mat-card>
+
+  </mat-tab>
+  <mat-tab label="Contacto"> Content 3 </mat-tab>
+</mat-tab-group>

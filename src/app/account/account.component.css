@@ -1,0 +1,25 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://image.flaticon.com/icons/png/512/55/55089.png');
+    background-size: cover;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .account-image{
+    width:105px;
+    height:105px;
+    border-radius:150px;
+    border:5px solid #666;
+  }

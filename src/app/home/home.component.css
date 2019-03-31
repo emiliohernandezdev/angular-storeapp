@@ -1,0 +1,18 @@
+mat-tab-group, mat-tab{
+    width: 100%;
+}
+
+.example-header-image {
+    background-image: url('https://neoattack.com/wp-content/uploads/2017/06/carrito-compra-1024x1024.png');
+    background-size: cover;
+  }
+
+  .example-header-image-2 {
+    background-image: url('http://tech.tribalyte.eu/wp-content/uploads/2018/05/ionic.png');
+    background-size: cover;
+  }
+
+  .example-header-image-3 {
+    background-image: url('https://www.kinal.org.gt/images/logollama.png');
+    background-size: cover;
+  }

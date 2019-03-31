@@ -1,0 +1,63 @@
+<h1 style="text-align:center">Descargar {{bindText}}</h1>
+
+<mat-accordion *ngIf="version === 'beta'">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <p>Cambios de la versión</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <h3 style="text-align:center">Changelog:</h3>
+      <p>-Mejorada la interfaz</p>
+      <p>-Removida la opción de cuenta de usuario</p>
+
+      <h3 style="color:red; text-align:center">Posibles fallas:</h3>
+      <p>-Si se tiene mala conexión a internet, no cargan los productos</p>
+      <p>-Al agregar producto, la imagen puede tardar en subirse hasta 1 minuto</p>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion *ngIf="version === 'stable'">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <p>Cambios de la versión</p>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <h3 style="text-align:center">Changelog:</h3>
+      <p>-Mejorada la interfaz</p>
+        <li>Product Sans Font de Google agregado</li>
+      <p>-Forzada la opción de subir imágenes al Storage. (Ya se cargan las imágenes)</p>
+      <p>-Solución de bug: No guardaba producto ó guardaba el producto, pero se mantenía en la misma pantalla de guardar.</p>
+      <p>-Agregada la función de mantener la sesión iniciada</p>
+      <p>-Se incorporó la edición de la imagen ántes de subirla.</p>
+
+      <h3 style="color:red; text-align:center">Posibles fallas:</h3>
+      <p>-Mantener inicio de sesión puede retardar el inicio de la App</p>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  <br/>
+  <br/>
+
+<div style="text-align:center">
+    <button style="background-color:green" mat-raised-button color="accent" (click)="Download()">
+        <mat-icon>undo</mat-icon>
+      Descargar</button>
+      
+      <br/>
+
+      <br/>
+
+      <button mat-raised-button color="accent" (click)="Home()">
+          <mat-icon>home</mat-icon>
+        Ir al inicio</button>
+
+
+
+</div>

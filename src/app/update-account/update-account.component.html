@@ -1,0 +1,19 @@
+<h1 style="text-align:center">Actualizar tu cuenta</h1>
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre completo" [(ngModel)]="name" [ngModelOptions]="{standalone:true}">
+  </mat-form-field>
+
+
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Correo electrónico" [(ngModel)]="email" [ngModelOptions]="{standalone:true}">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Teléfono" type="tel" [(ngModel)]="phone" [ngModelOptions]="{standalone:true}">
+</mat-form-field>
+
+<div style="text-align:center">
+    <button mat-raised-button color="accent" (click)="Update()"><mat-icon>save</mat-icon>
+      Guardar cambios</button>
+</div>

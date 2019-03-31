@@ -1,0 +1,19 @@
+<mat-card>
+  <h1 style="text-align:center">¿Deseas eliminar tu cuenta?</h1>
+  <p style="text-align:center">Ten en cuenta que perderás todos tus datos, y en dado caso que quieras volver
+  tendrás que volver a crear y verificar tu cuenta</p>
+
+  <div style="text-align:center">
+      <button mat-raised-button color="primary" style="background-color:red">
+        <mat-icon>delete</mat-icon>
+        Sí, deseo eliminarla</button>
+
+        <br/>
+        <br/>
+
+        <button mat-raised-button color="primary" style="background-color:green" (click)="Cancel()">
+            <mat-icon>cancel</mat-icon>
+            No, lo pensé bien</button>
+  </div>
+  
+</mat-card>

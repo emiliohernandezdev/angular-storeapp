@@ -1,0 +1,39 @@
+<mat-card style="margin-left: 5%; margin-right: 5%;">
+    <h1 style="text-align:center;">Desarrolladores:</h1>
+  </mat-card>
+  
+  
+  <mat-card style="margin-left: 5%; margin-right: 5%; text-align: center" *ngIf="param === 'web'">
+    <img style="margin-left: 5%; margin-right: 5%;" src="https://cdn-images-1.medium.com/max/807/1*grk7btEn0OJEQRKgG2Qs2A.png" width="75%">
+      <h1 style="text-align:center;">Equipo web:</h1>
+      <mat-list>
+          <mat-list-item *ngFor="let webDeveloper of webDevelopers">
+            <img matListAvatar class="avatar" src="{{webDeveloper.image}}" alt="Imagen">
+            <h3 matLine> <b>{{webDeveloper.name}} </b></h3>
+            <p matLine>
+              <span> {{webDeveloper.activity}} </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+        <div style="text-align:center">
+          <button mat-raised-button color="accent" (click)="Back()">Volver</button>
+        </div>
+        
+  </mat-card>
+  
+  <mat-card style="margin-left: 5%; margin-right: 5%; text-align: center" *ngIf="param === 'mobile'">
+      <img style="margin-left: 5%; margin-right: 5%;" src="https://cdn-images-1.medium.com/max/750/1*sAYp2a5cufNyzkQUDGzS0A.jpeg" width="75%">
+      <h1 style="text-align:center;">Equipo de desarrollo móvil:</h1>
+    <mat-list>
+      <mat-list-item *ngFor="let mobileDeveloper of mobileDevelopers">
+        <img matListAvatar class="avatar" src="{{mobileDeveloper.image}}" alt="Imagen">
+        <h3 matLine> <b>{{mobileDeveloper.name}} </b></h3>
+        <p matLine>
+          <span> {{mobileDeveloper.activity}} </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+    <div style="text-align:center">
+      <button mat-raised-button color="accent" (click)="Back()">Volver</button>
+    </div>
+  </mat-card>
