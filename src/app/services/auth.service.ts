@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import { Ptor } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -88,5 +89,10 @@ export class AuthService {
       return null;
     }
     
+  }
+
+  getProducts(){
+    let prod = firebase.auth()
+    console.log(firebase.auth())
   }
 }

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { DownloadComponent } from '../download/download.component';
 import { FirebaseService } from '../services/firebase.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,21 @@ import { FirebaseService } from '../services/firebase.service';
 export class HomeComponent implements OnInit {
 
   dialogRef:any;
+  products : any
+
+  nombre : string = 'sam'
+
+  prod : any[] = [1, 2, 3,4 ]
+
   constructor(public dialog: MatDialog,
-    public router: Router, public auth: FirebaseService) { }
+    public router: Router, public auth: FirebaseService, 
+    private productsService: ProductsService ) { }
 
   ngOnInit() {
       //firebase.initializeApp(firebaseConfig);
     
     //this.auth.VerifySession();
-
+    this.getProducts()
   }
 
   Download(){
@@ -33,6 +41,14 @@ export class HomeComponent implements OnInit {
 
   Close(){
     this.dialogRef.close();
+  }
+
+
+  getProducts(){
+    this.productsService.getProducts().subscribe( data => {
+      console.log(data)
+      this.products = data
+    })
   }
 
 

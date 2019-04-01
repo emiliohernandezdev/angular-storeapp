@@ -69,5 +69,29 @@
         </mat-card>
 
   </mat-tab>
-  <mat-tab label="Contacto"> Content 3 </mat-tab>
+  <mat-tab label="Contacto"> Conto </mat-tab>
+  
+  <mat-tab label="Catalogue">
+    
+    <mat-card *ngFor="let producto of products | data; let i = indice "  class="example-card">
+      <mat-card-header>
+          <div mat-card-avatar class="example-header-image-3"></div>
+          <mat-card-title>Estos son los productos</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p> {{ products[producto].name  }}  </p>
+            <br>
+            <p> {{ products[producto].price  }} </p>
+        </mat-card-content>
+        <mat-card-actions style="text-align:center">
+          <button mat-raised-button color="accent" (click)="Developers('web')">Add Cart</button>
+          <br/>
+          <br/>
+          <button mat-raised-button color="primary" (click)="Developers('movil')">view detail</button>
+        </mat-card-actions>
+    </mat-card>
+
+
+  </mat-tab>
 </mat-tab-group>

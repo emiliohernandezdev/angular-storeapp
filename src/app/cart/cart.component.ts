@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,15 +11,24 @@ import * as firebase from 'firebase';
 export class CartComponent implements OnInit {
   products = [];
   
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private productService : ProductsService ) { 
+
+  }
   email:string= this.auth.getUserEmail();
   ref = firebase.database().ref('carts').child("owner").equalTo(this.email)
+  data = firebase.database().ref('/products')
+
   ngOnInit() {
-    this.ref.on('value', resp => {
+    
+    //console.log(this.data)
+    
+    //console.log( this.productService.getHeroes() )
+    //console.log( this.productService.getProducts() )
+    /*this.ref.on('value', resp => {
       console.log(resp.val())
     })
 
-    console.log(this.auth.getAllData())
+    console.log(this.auth.getAllData())*/
   }
 
 }

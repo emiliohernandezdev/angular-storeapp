@@ -23,6 +23,13 @@ import {MatListModule} from '@angular/material/list';
 import { UpdateAccountComponent } from './update-account/update-account.component';
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
 import { DevelopersComponent } from './developers/developers.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+
+
+//HTTP 
+import { HttpClientModule } from '@angular/common/http'
+import { ProductsService } from './services/products.service';
+import { DataPipe } from './services/data.pipe';
 
 
 const dialogMock = {
@@ -40,7 +47,9 @@ const dialogMock = {
     CartComponent,
     UpdateAccountComponent,
     DeleteAccountComponent,
-    DevelopersComponent
+    DevelopersComponent,
+    CatalogueComponent,
+    DataPipe
   ],
   imports: [
     BrowserModule,
@@ -58,7 +67,8 @@ const dialogMock = {
     MatSnackBarModule,
     MatListModule,
     MatExpansionModule,
-    MatBadgeModule
+    MatBadgeModule,
+    HttpClientModule
   ],
   entryComponents: [
     DownloadComponent,
@@ -69,6 +79,7 @@ const dialogMock = {
     DeleteAccountComponent
   ],
   providers: [
+    ProductsService,
     {provide: MatDialogRef, useValue: dialogMock}
   ],
   bootstrap: [AppComponent]
