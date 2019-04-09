@@ -1,0 +1,31 @@
+<h1 style="text-align:center">Registro</h1>
+
+
+<form class="example-form" (ngSubmit)="DoRegister()">
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput placeholder="ejemplo@google.com" type="email" autocomplete="off" [(ngModel)]="email" [ngModelOptions]="{standalone:true}">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="***********" type="password" autocomplete="off" [(ngModel)]="password" [ngModelOptions]="{standalone:true}">
+    </mat-form-field>
+
+</form>
+
+<div style="text-align:center">
+    <button mat-flat-button color="accent" (click)="DoRegister()">
+          <mat-icon>done_all</mat-icon>
+          Registrar</button>
+</div>
+
+<br/>
+
+
+<div style="text-align:center">
+    <button mat-button color="accent" (click)="Home()">
+        <mat-icon>home</mat-icon>
+        Volver al inicio</button>
+</div>

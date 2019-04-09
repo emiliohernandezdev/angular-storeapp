@@ -1,0 +1,14 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  .productimage{
+    padding: 4px;
+	border: solid 1px rgb(136, 132, 132);
+	background: #fff;
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  }

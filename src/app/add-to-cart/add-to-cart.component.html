@@ -1,0 +1,24 @@
+<h2 style="text-align:center">Agregar al carrito</h2>
+<h3 style="text-align:center">{{item.name}}</h3>
+<p style="text-align:center">Unidades a agregar:</p>
+<div style="text-align:center">
+    <mat-slider (change)="calculate()"
+    class="example-margin"
+    max="{{item.stock}}"
+    [min]="0"
+    [thumbLabel]="true"
+    [(ngModel)]="values">
+    </mat-slider>
+</div>
+
+<p *ngIf="values === 0" style="text-align:center">No vas a agregar ninguna unidad</p>
+<p *ngIf="values > 0 && values < 2" style="text-align:center">Vas a agregar {{values}} unidad a tu carrito</p>
+<p *ngIf="values > 1" style="text-align:center">Vas a agregar {{values}} unidades a tu carrito</p>
+<p style="text-align:center" *ngIf="values !== 0"><b>Total: </b>Q {{total}}</p>
+<p style="text-align:center" *ngIf="values === 0"><b>Total: </b>Q 0.00</p>
+<div style="text-align:center">
+    <button mat-flat-button color="accent" (click)="Save()" *ngIf="values !== 0">
+      <mat-icon>add_circle_outline</mat-icon>
+      Agregar producto</button>
+</div>
+

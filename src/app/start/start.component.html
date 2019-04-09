@@ -1,0 +1,153 @@
+<mat-tab-group>
+    <mat-tab label="Inicio">
+        <ng-template matTabContent>
+            <h2 style="text-align:center">StoreApp</h2>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Productos de calidad</mat-card-title>
+                    <mat-card-subtitle>100% importados</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://www.gadgetbytenepal.com/wp-content/uploads/2018/12/xiaomi-mobiles-price-nepal.jpg" alt="Fotos de productos">
+                <mat-card-content>
+                    <p>
+                        Productos de la mejor calidad, con garantía, para nuestros clientes. Nos gusta dar el mejor servicio, y la mejor atención por nuestros productos, contamos con el centro de servicio para cualquier reparación
+                    </p>
+                </mat-card-content>
+                <mat-card-actions style="text-align:center">
+                    <button mat-flat-button color="accent" (click)="Products()">
+                  <mat-icon>store</mat-icon>
+                  Conocer productos</button>
+                </mat-card-actions>
+            </mat-card>
+            <hr/>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image-2"></div>
+                    <mat-card-title>100% chapines</mat-card-title>
+                    <mat-card-subtitle>Orgullosos Guatemaltecos emprendedores</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://www.hotelesdepeten.com/cms/media/antigua.jpg" alt="GuateBella">
+                <mat-card-content>
+                    <p>
+                        Nos sentimos Orgullosos de ser 100% pechos del quetzal. Emprendedores Guatemaltecos, inspirados en nuestro país. Y Orgullosos de tener nuestra App:
+                        <a href="https://firebasestorage.googleapis.com/v0/b/storeappemiliohernandez.appspot.com/o/Resources%2FAndroid%2FStable%2Fapp-debug.apk?alt=media&token=24661661-674d-4286-b868-9d0cb7e34301">Descargar aplicación</a>
+                    </p>
+                </mat-card-content>
+
+            </mat-card>
+
+            <hr/>
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image-2"></div>
+                    <mat-card-title>Nuestras ofertas</mat-card-title>
+                    <mat-card-subtitle>Conoce nuestros productos en descuento:</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="http://www.mobile2go.com.my/images/thumbs/0001417_xiaomi-redmi-5-plus-599-full-view-display-64gb-rom4gb-ram-global-rom.jpeg" alt="GuateBella">
+                <mat-card-content>
+                    <p>
+                        <mat-list>
+                            <mat-list-item *ngFor="let ad of ads">
+                                <img matListAvatar src="{{ad.image}}" alt="Foto de {{ad.name}}">
+                                <h3 matLine> {{ad.name}} </h3>
+                                <p matLine>
+                                    <span> {{ad.description}} </span>
+                                </p>
+                            </mat-list-item>
+                        </mat-list>
+                    </p>
+                </mat-card-content>
+
+            </mat-card>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Sobre nosotros">
+        <ng-template matTabContent>
+            <mat-card class="homec">
+                <h1 style="text-align:center">¿Quiénes somos?</h1>
+                <p style="text-align:center"> Somos una distribuidora de tecnologia de 1er mundo con el objetivo de poder llevar producto con calidad para Satisfacer tus necesidades. Cabe destacar que somo proveedores del producto que ofrecemos y es creado por ingenieros altamente
+                    capacitados. Invertimos mucho ahìnco a cada uno de nuestros productos para que puedan cumplir las tareas del dia a dia.</p>
+                <hr />
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Visión:</mat-card-title>
+                        <mat-card-subtitle>Sobre nuestra empresa</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="https://blog.aventaja.com/hubfs/Posts/tener-clientes-satisfechos.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p>
+                            Ser reconocidos por nuestros clientes como una de las mejores distribuidoras de tecnologia mundialmente.
+                        </p>
+                    </mat-card-content>
+
+                    <hr/>
+
+                </mat-card>
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Misión:</mat-card-title>
+                        <mat-card-subtitle>Sobre nuestra empresa</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="https://st2.depositphotos.com/5383684/11670/v/950/depositphotos_116700338-stock-illustration-delivery-man-hand-with-produce.jpg">
+                    <mat-card-content>
+                        <p>
+                            Nuestra mision es poder llevar a la puerta de su casa nuestro producto, mismo que le servira en su dia a dia y podra cumplir cada una de las funciones y necesidades del usuario.
+
+                        </p>
+
+                    </mat-card-content>
+                </mat-card>
+            </mat-card>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Contacto">
+        <ng-template matTabContent>
+            <div style="text-align:center">
+                <h2 style="text-align:center">Contáctanos:</h2>
+                <form class="example-form" style="text-align:center">
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Nombre(s) y apellido(s)</mat-label>
+                        <input matInput placeholder="Ingresa tu nombre" [(ngModel)]="name" [ngModelOptions]="{standalone:true}">
+                        <mat-hint>Ingresa tu nombre completo</mat-hint>
+                    </mat-form-field>
+
+                    <br/>
+                    <br/>
+
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Número telefónico</mat-label>
+                        <input matInput placeholder="Ingresa tu número de teléfono" [(ngModel)]="phone" [ngModelOptions]="{standalone:true}">
+                        <mat-hint>Solo números válidos</mat-hint>
+                    </mat-form-field>
+
+                    <br/>
+                    <br/>
+
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Comentarios/mensaje</mat-label>
+                        <textarea matInput placeholder="Ingresa tu mensaje y/o comentario" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5" [(ngModel)]="comment" [ngModelOptions]="{standalone:true}"></textarea>
+                        <mat-hint>No palabras ofensivas</mat-hint>
+                    </mat-form-field>
+                </form>
+
+                <br/>
+
+                <div style="text-align:center">
+                    <button mat-flat-button color="accent" (click)="Send()">
+                        <mat-icon>send</mat-icon>
+                        Enviar mensaje</button>
+                </div>
+
+            </div>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Chats">
+
+        <button mat-flat-button color="accent" (click)="load()">Cargar mensajes</button>
+
+    </mat-tab>
+</mat-tab-group>

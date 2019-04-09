@@ -1,0 +1,45 @@
+<h1 style="text-align:center">Iniciar sesión</h1>
+
+
+<form class="example-form" (ngSubmit)="DoLogin()">
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput placeholder="ejemplo@google.com" type="email" autocomplete="off" [(ngModel)]="email" [ngModelOptions]="{standalone:true}">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="***********" type="password" autocomplete="off" [(ngModel)]="password" [ngModelOptions]="{standalone:true}">
+    </mat-form-field>
+
+</form>
+
+<div style="text-align:center">
+    <button mat-flat-button color="accent" (click)="DoLogin()">
+          <mat-icon>done_outline</mat-icon>
+          Ingresar</button>
+</div>
+
+<br/>
+
+<div style="text-align:center">
+    <button mat-flat-button color="primary" (click)="GoogleLogin()">
+          <mat-icon>account_circle</mat-icon>
+          Ingresar con Google</button>
+</div>
+
+<br />
+
+<div style="text-align:center">
+    <button mat-button color="accent" (click)="RecoverPassword()">
+          <mat-icon>lock_open</mat-icon>
+          ¿Olvidaste tu contraseña?</button>
+</div>
+
+
+<div style="text-align:center">
+    <button mat-button color="accent" (click)="Register()">
+        <mat-icon>account_box</mat-icon>
+        ¿No tienes cuenta?</button>
+</div>

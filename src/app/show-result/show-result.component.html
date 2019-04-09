@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <h2 style="text-align:center">{{item.name}}</h2>
+  <img src="{{item.image}}" class="productimage" width="85%" height="45%" alt="Foto de {{item.name}}">
+  <p>
+    <b>Descripción:</b>
+    {{item.description}}
+  </p>
+  <p>
+    <b>Precio: </b>Q
+    {{item.price}}
+  </p>
+  <p>
+    <b>Unidades en stock: </b>{{item.stock}}
+  </p>
+</div>
+
+<div style="text-align:center">
+    <button mat-flat-button color="primary" (click)="AddToCart()">
+      <mat-icon>shopping_cart</mat-icon>
+      Agregar al carrito</button>
+</div>

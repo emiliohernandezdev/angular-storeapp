@@ -1,0 +1,21 @@
+<h1 style="text-align:center">Resultados de la búsqueda de "{{data.filter}}"</h1>
+<h5 style="text-align:center" *ngIf="data.results.length > 0">Click sobre un resultado para ver más información:</h5>
+
+
+    <p *ngIf="data.results.length < 1" style="text-align:center">No hay resultados para la búsqueda</p>
+    <p *ngIf="data.results.length > 0" style="text-align:center">Resultados de la búsqueda:</p>
+    <div style="text-align:center">
+        <mat-list>
+            <mat-list-item *ngFor="let result of data.results" (click)="ShowResult(result)">
+                <img matListAvatar src="{{result.image}}" alt="Foto de {{result.name}}">
+              <h3 matLine> {{result.name}} </h3>
+              <p matLine>
+                <span> {{result.description}} </span>
+              </p>
+            </mat-list-item>
+          </mat-list>
+    </div>
+<div>
+
+
+</div>

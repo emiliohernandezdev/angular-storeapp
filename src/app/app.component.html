@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <span>StoreApp</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span>
+    <button mat-flat-button color="accent" *ngIf="auth.VerifySession() === false" (click)="Login()">
+        <mat-icon>account_circle</mat-icon>
+      Iniciar sesión</button> &nbsp;
+      <button mat-flat-button color="accent" *ngIf="auth.VerifySession() === true" [matMenuTriggerFor]="appMenu">
+          <mat-icon>account_circle</mat-icon>
+        Cuenta</button> &nbsp;
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item (click)="Account()">
+                <mat-icon>view_headline</mat-icon>
+              Ver la cuenta</button>
+            <button mat-menu-item (click)="Logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              Cerrar sesión</button>
+          </mat-menu>
+      <button mat-flat-button color="accent" *ngIf="auth.VerifySession() === true" (click)="Cart()">
+          <mat-icon matBadge="22" matBadgePosition="before">shopping_cart</mat-icon>
+        Carrito</button>
+  </span>
+
+
+</mat-toolbar>
+
+<div style="text-align:center">
+    <mat-form-field appearance="outline" style="width:95%">
+        <mat-label>Buscar productos</mat-label>
+        <input matInput placeholder="Ingresa tu búsqueda"  style="width:95%" [(ngModel)]="filter" (input)="getItems($event)" [ngModelOptions]="{standalone:true}" autocomplete="off">
+        <mat-icon matSuffix (click)="Search()">search</mat-icon>
+      </mat-form-field>
+</div>
+
+
+
+
+<router-outlet></router-outlet>
